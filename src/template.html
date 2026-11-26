@@ -141,7 +141,7 @@ const T = {
     footer: "Сделано <a href=\"https://pairclear.com/ru/" + UTM + "\">PairClear</a>: короткие тесты о том, что происходит между двумя людьми. Код MIT, тексты CC BY 4.0, написано с помощью ИИ. <a href=\"https://github.com/pairclear/not-a-therapist\">Исходники на GitHub</a>. Страница не делает сетевых запросов и не собирает аналитику."
   }
 };
-let lang = new URLSearchParams(location.search).get("lang") || ((navigator.language || "en").toLowerCase().startsWith("ru") ? "ru" : "en");
+let lang = (new URLSearchParams(location.search).get("lang") || document.documentElement.getAttribute("data-lang")) || ((navigator.language || "en").toLowerCase().startsWith("ru") ? "ru" : "en");
 if (!T[lang]) lang = "en";
 let version = "full";
 const $ = s => document.querySelector(s);

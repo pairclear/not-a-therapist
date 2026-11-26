@@ -69,6 +69,23 @@ th{font-weight:600;color:var(--muted);font-size:13px;text-transform:uppercase;le
 .tablewrap{overflow-x:auto}
 footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted)}
 </style>
+<!-- seo:start -->
+<link rel="canonical" href="https://pairclear.github.io/not-a-therapist/">
+<link rel="alternate" hreflang="en" href="https://pairclear.github.io/not-a-therapist/en/">
+<link rel="alternate" hreflang="ru" href="https://pairclear.github.io/not-a-therapist/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pairclear.github.io/not-a-therapist/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PairClear">
+<meta property="og:title" content="Not a therapist: safety rules for AI chats about relationships">
+<meta property="og:description" content="A free system prompt and Claude skill for AI chats about relationships and feelings: listen first, no diagnoses, no labels for absent partners, no leave-or-stay verdicts, crisis signs first. With 14 test scenarios.">
+<meta property="og:url" content="https://pairclear.github.io/not-a-therapist/">
+<meta property="og:image" content="https://pairclear.github.io/not-a-therapist/assets/social-preview.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Not a therapist", "description": "A free system prompt and Claude skill for AI chats about relationships and feelings: listen first, no diagnoses, no labels for absent partners, no leave-or-stay verdicts, crisis signs first. With 14 test scenarios.", "url": "https://pairclear.github.io/not-a-therapist/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Any (runs in the browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": ["en", "ru"], "image": "https://pairclear.github.io/not-a-therapist/assets/social-preview.png", "license": "https://opensource.org/licenses/MIT", "codeRepository": "https://github.com/pairclear/not-a-therapist", "publisher": {"@type": "Organization", "name": "PairClear", "url": "https://pairclear.com/"}}</script>
+<!-- seo:end -->
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -141,7 +158,7 @@ const T = {
     footer: "Сделано <a href=\"https://pairclear.com/ru/" + UTM + "\">PairClear</a>: короткие тесты о том, что происходит между двумя людьми. Код MIT, тексты CC BY 4.0, написано с помощью ИИ. <a href=\"https://github.com/pairclear/not-a-therapist\">Исходники на GitHub</a>. Страница не делает сетевых запросов и не собирает аналитику."
   }
 };
-let lang = new URLSearchParams(location.search).get("lang") || ((navigator.language || "en").toLowerCase().startsWith("ru") ? "ru" : "en");
+let lang = (new URLSearchParams(location.search).get("lang") || document.documentElement.getAttribute("data-lang")) || ((navigator.language || "en").toLowerCase().startsWith("ru") ? "ru" : "en");
 if (!T[lang]) lang = "en";
 let version = "full";
 const $ = s => document.querySelector(s);

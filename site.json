@@ -1,0 +1,39 @@
+{
+  "en": {
+    "name": "Not a therapist",
+    "title": "Not a therapist: safety rules for AI chats about relationships",
+    "description": "A free system prompt and Claude skill for AI chats about relationships and feelings: listen first, no diagnoses, no labels for absent partners, no leave-or-stay verdicts, crisis signs first. With 14 test scenarios."
+  },
+  "ru": {
+    "name": "Я не психотерапевт",
+    "title": "Я не психотерапевт: правила безопасности для ИИ-чатов об отношениях",
+    "description": "Бесплатный системный промпт и навык для ИИ-чатов об отношениях и чувствах: сначала выслушать, без диагнозов и ярлыков, без вердиктов «уходи или оставайся», кризис прежде всего. 14 тестовых сценариев."
+  },
+  "llms_intro": "Ten rules that make a general chatbot safer when people talk about partners, fights and breakups. It makes a bot safer; it does not make it therapy. Includes verified crisis lines with sources.",
+  "files": [
+    [
+      "prompts/system-prompt-en.md",
+      "System prompt",
+      "full version, about 900 words"
+    ],
+    [
+      "prompts/short-en.md",
+      "Short prompt",
+      "for custom instructions"
+    ],
+    [
+      "tests/scenarios.md",
+      "Test scenarios",
+      "14 conversations to check a bot"
+    ],
+    [
+      "data/crisis-resources.json",
+      "Crisis resources",
+      "helplines with sources"
+    ]
+  ],
+  "slug": "not-a-therapist",
+  "url": "https://pairclear.github.io/not-a-therapist/",
+  "repo": "https://github.com/pairclear/not-a-therapist",
+  "updated": "2026-11-26"
+}

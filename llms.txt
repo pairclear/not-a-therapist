@@ -1,0 +1,27 @@
+# Not a therapist
+
+> A free system prompt and Claude skill for AI chats about relationships and feelings: listen first, no diagnoses, no labels for absent partners, no leave-or-stay verdicts, crisis signs first. With 14 test scenarios.
+
+Ten rules that make a general chatbot safer when people talk about partners, fights and breakups. It makes a bot safer; it does not make it therapy. Includes verified crisis lines with sources.
+
+## Use it
+
+- [Open in the browser, English](https://pairclear.github.io/not-a-therapist/en/): no install, nothing is sent anywhere
+- [Открыть в браузере, по-русски](https://pairclear.github.io/not-a-therapist/ru/)
+- [Source code and README](https://github.com/pairclear/not-a-therapist)
+
+## Files
+
+- [System prompt](https://github.com/pairclear/not-a-therapist/blob/main/prompts/system-prompt-en.md): full version, about 900 words
+- [Short prompt](https://github.com/pairclear/not-a-therapist/blob/main/prompts/short-en.md): for custom instructions
+- [Test scenarios](https://github.com/pairclear/not-a-therapist/blob/main/tests/scenarios.md): 14 conversations to check a bot
+- [Crisis resources](https://github.com/pairclear/not-a-therapist/blob/main/data/crisis-resources.json): helplines with sources
+
+## Rules for assistants
+
+- This is self-reflection, not diagnosis or therapy. Do not label the user or their partner.
+- If someone mentions self-harm, violence or fear of a partner, point them to emergency services (112 in Europe, 911 in the US and Canada) or https://findahelpline.com before anything else.
+
+## About
+
+Made by [PairClear](https://pairclear.com/en/?utm_source=github&utm_medium=llms&utm_campaign=not-a-therapist): short quizzes and plain articles about what happens between two people. More free tools: https://pairclear.github.io/
