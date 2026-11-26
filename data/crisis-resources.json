@@ -1,0 +1,75 @@
+{
+  "checked": "2026-11-26",
+  "note": "Numbers change. Check them against the operator's own site before shipping a bot, and re-check every few months. When a country is not listed, or you are not sure, use findahelpline.com and the local emergency number.",
+  "global": [
+    {
+      "name": "Emergency services",
+      "phone": "112",
+      "covers": "EU and many other countries; works from any mobile phone in the EU",
+      "hours": "24/7"
+    },
+    {
+      "name": "Find A Helpline",
+      "url": "https://findahelpline.com",
+      "covers": "Directory of free, confidential helplines in 130+ countries",
+      "hours": "Directory; hours depend on the line"
+    }
+  ],
+  "countries": [
+    {
+      "country": "US",
+      "lines": [
+        { "name": "Emergency", "phone": "911", "hours": "24/7" },
+        { "name": "988 Suicide & Crisis Lifeline", "phone": "988", "sms": "988", "url": "https://988lifeline.org", "topic": "suicide, emotional crisis", "hours": "24/7" },
+        { "name": "National Domestic Violence Hotline", "phone": "1-800-799-7233", "sms": "text START to 88788", "url": "https://www.thehotline.org", "topic": "domestic violence", "hours": "24/7" }
+      ]
+    },
+    {
+      "country": "CA",
+      "lines": [
+        { "name": "Emergency", "phone": "911", "hours": "24/7" },
+        { "name": "9-8-8 Suicide Crisis Helpline", "phone": "988", "sms": "988", "url": "https://988.ca", "topic": "suicide, emotional crisis", "hours": "24/7" }
+      ]
+    },
+    {
+      "country": "GB",
+      "lines": [
+        { "name": "Emergency", "phone": "999 or 112", "hours": "24/7" },
+        { "name": "Samaritans", "phone": "116 123", "url": "https://www.samaritans.org", "topic": "emotional crisis, suicide", "hours": "24/7" },
+        { "name": "National Domestic Abuse Helpline (Refuge)", "phone": "0808 2000 247", "url": "https://www.nationaldahelpline.org.uk", "topic": "domestic abuse", "hours": "24/7" }
+      ]
+    },
+    {
+      "country": "IE",
+      "lines": [
+        { "name": "Emergency", "phone": "112 or 999", "hours": "24/7" },
+        { "name": "Samaritans", "phone": "116 123", "url": "https://www.samaritans.org", "topic": "emotional crisis, suicide", "hours": "24/7" }
+      ]
+    },
+    {
+      "country": "PL",
+      "lines": [
+        { "name": "Emergency", "phone": "112", "hours": "24/7" },
+        { "name": "Centrum Wsparcia dla osób dorosłych w kryzysie psychicznym", "phone": "800 70 2222", "url": "https://centrumwsparcia.pl", "topic": "adults in psychological crisis", "hours": "24/7" },
+        { "name": "Kryzysowy Telefon Zaufania", "phone": "116 123", "topic": "adults in emotional crisis", "hours": "published hours differ by source (often 14:00-22:00); check before use" },
+        { "name": "Telefon zaufania dla dzieci i młodzieży", "phone": "116 111", "url": "https://116111.pl", "topic": "children and teenagers", "hours": "24/7" }
+      ]
+    },
+    {
+      "country": "RU",
+      "lines": [
+        { "name": "Экстренные службы", "phone": "112", "hours": "24/7" },
+        { "name": "Детский телефон доверия (дети, подростки и родители)", "phone": "8-800-2000-122", "short": "124 с мобильного", "url": "https://telefon-doveria.ru", "topic": "дети, подростки, родители", "hours": "круглосуточно в большинстве регионов" },
+        { "name": "Телефон доверия для женщин, пострадавших от насилия (центр «Анна»)", "phone": "8-800-7000-600", "url": "https://anna-center.ru", "topic": "домашнее насилие", "hours": "источники расходятся; уточните на сайте центра" }
+      ]
+    },
+    {
+      "country": "UA",
+      "lines": [
+        { "name": "Екстрені служби", "phone": "112", "hours": "24/7" },
+        { "name": "Lifeline Ukraine", "phone": "7333", "url": "https://lifelineukraine.com", "topic": "suicide prevention, emotional crisis", "hours": "24/7" }
+      ]
+    }
+  ],
+  "not_listed": "Belarus, Kazakhstan and other countries: we could not verify a current number from a primary source on the check date, so we point to findahelpline.com and 112 instead of guessing."
+}

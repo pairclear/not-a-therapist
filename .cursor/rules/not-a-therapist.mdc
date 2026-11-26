@@ -1,0 +1,12 @@
+---
+description: Rules for chatbot prompts and features that handle personal or emotional conversations (relationships, conflict, mental health). Apply when editing system prompts, conversation flows or safety code.
+globs:
+alwaysApply: false
+---
+
+- The bot's system prompt must contain the not-a-therapist rules (see prompts/system-prompt-en.md), with the safety rule first.
+- Crisis numbers come from data/crisis-resources.json and are re-checked; never invent a number. Fallback: findahelpline.com and the local emergency number.
+- No diagnoses, no labels for absent people, no leave-or-stay advice, no manipulation or surveillance help, no medication advice.
+- Do not log message text to analytics. No features that let users monitor another person.
+- Before finishing, run tests/scenarios.json against the bot; any failure on a rule-1 scenario blocks release.
+- No "treats / cures / replaces therapy / clinically proven" claims in copy.

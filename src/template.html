@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not a therapist · Я не психотерапевт</title>
+<meta name="description" content="Free safety rules for AI chats about relationships and feelings: listen first, no diagnoses, no labels, crisis signs first. System prompt, Claude skill and test scenarios. Правила безопасного разговора для ИИ-ботов.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1714'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23c0613f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#faf7f2; --card:#f2ede5; --field:#ffffff; --ink:#1a1714; --muted:#6b645c; --line:#e4ddd2;
+  --accent:#b85c3c; --accent-soft:#f3e2d9; --btn:#1a1714; --btn-ink:#faf7f2; --warn:#8a3b1f; --warn-bg:#fbe9df;
+  --serif:"Iowan Old Style","Charter","Georgia","Cambria","Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Inter","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace; --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15130f; --card:#211e19; --field:#1b1814; --ink:#efe9df; --muted:#a39b8f; --line:#332e27;
+    --accent:#d9774f; --accent-soft:#3a271e; --btn:#efe9df; --btn-ink:#15130f; --warn:#f2b597; --warn-bg:#3a2219;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15130f; --card:#211e19; --field:#1b1814; --ink:#efe9df; --muted:#a39b8f; --line:#332e27;
+  --accent:#d9774f; --accent-soft:#3a271e; --btn:#efe9df; --btn-ink:#15130f; --warn:#f2b597; --warn-bg:#3a2219;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--sans)}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:20px;text-decoration:none}
+.mark{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:var(--ink)}
+.mark i{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.langs{display:flex;gap:4px}
+.langs button,.tabs button{font:inherit;font-size:14px;background:none;border:1px solid transparent;color:var(--muted);padding:4px 12px;border-radius:999px;cursor:pointer}
+.langs button[aria-pressed="true"],.tabs button[aria-pressed="true"]{color:var(--ink);border-color:var(--line);background:var(--card)}
+main{padding:40px 0 56px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;line-height:1.15;margin:0}
+h1{font-size:clamp(34px,6vw,54px)}
+h2{font-size:clamp(24px,4vw,32px);margin-top:56px}
+h3{font-size:18px}
+.lead{font-size:19px;max-width:660px;margin:18px 0 0}
+.muted{color:var(--muted)} .small{font-size:14px}
+.note{background:var(--warn-bg);color:var(--warn);border-radius:var(--r);padding:14px 18px;margin:24px 0 0;font-size:15px;max-width:760px}
+.rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:22px;padding:0;list-style:none}
+.rules li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+.rules b{display:block;font-family:var(--serif);font-size:18px;margin-bottom:4px}
+.rules span{color:var(--muted);font-size:15px}
+.tabs{display:flex;gap:6px;margin:18px 0 10px;flex-wrap:wrap}
+pre{background:var(--field);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;white-space:pre-wrap;word-wrap:break-word;font:14px/1.55 var(--mono);max-height:440px;overflow:auto;margin:0}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:14px}
+.btn{font:inherit;font-weight:600;font-size:16px;background:var(--btn);color:var(--btn-ink);border:1px solid var(--btn);padding:11px 18px;border-radius:999px;cursor:pointer}
+.btn:focus-visible,button:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;margin-top:10px}
+summary{cursor:pointer;font-weight:600}
+summary small{font-weight:400;color:var(--muted)}
+details q{display:block;font-family:var(--serif);font-size:18px;margin:12px 0;quotes:"\201C" "\201D"}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:700px){.cols{grid-template-columns:1fr}}
+.cols ul{margin:6px 0 0;padding-left:20px;font-size:15px}
+.ok{color:#2f7a4a} .no{color:var(--warn)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin-top:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+.tablewrap{overflow-x:auto}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="https://pairclear.com/?utm_source=github&utm_medium=pages&utm_campaign=not-a-therapist"><span class="mark"><i></i></span>PairClear</a>
+  <div class="langs" role="group" aria-label="Language">
+    <button data-lang="ru" aria-pressed="false">RU</button><button data-lang="en" aria-pressed="false">EN</button>
+  </div>
+</div></header>
+<main class="wrap">
+  <h1 data-t="h1"></h1>
+  <p class="lead" data-t="lead"></p>
+  <p class="note" data-t="banner"></p>
+
+  <ul class="rules" id="rules"></ul>
+
+  <h2 data-t="h_prompt"></h2>
+  <p class="muted" data-t="p_prompt"></p>
+  <div class="tabs" role="group">
+    <button data-v="full" aria-pressed="true" data-t="t_full"></button><button data-v="short" aria-pressed="false" data-t="t_short"></button>
+  </div>
+  <pre id="prompt"></pre>
+  <div class="row"><button class="btn" id="copy" data-t="copy"></button><span class="muted small" id="count"></span></div>
+
+  <h2 data-t="h_tests"></h2>
+  <p class="muted" data-t="p_tests"></p>
+  <div id="tests"></div>
+
+  <h2 data-t="h_crisis"></h2>
+  <p class="muted" id="crisisNote"></p>
+  <div class="tablewrap"><table id="crisis"></table></div>
+</main>
+<footer><div class="wrap" data-t="footer"></div></footer>
+
+<script>
+const DATA = /*DATA*/null;
+const UTM = "?utm_source=github&utm_medium=pages&utm_campaign=not-a-therapist";
+const T = {
+  en: {
+    h1: "Not a therapist",
+    lead: "Rules for any AI chat where people talk about relationships and feelings: listen first, no diagnoses, no labels for people who aren't there, no “leave him”, and crisis signs before everything else. A system prompt, a Claude skill and 14 test conversations.",
+    banner: "These rules make a bot safer. They do not turn it into therapy, and they do not replace a specialist or emergency services.",
+    rules: [["Safety first","Suicide, self-harm, violence at home or a child at risk: stop the topic, ask if they are safe, give real numbers."],["Listen first","Reflect what you heard and ask what they want: vent, understand, decide or prepare a talk."],["No diagnoses","Not for the user, not for anyone else. Role-play doesn't change it."],["No labels","No “narcissist” verdicts about absent people. Behaviour, effect, options. Violence is named clearly."],["No leave-or-stay","Options and costs; the decision is theirs."],["No manipulation","No jealousy texts, partner tests or spying."],["Honest AI","Says it is an AI, can be wrong, isn't a friend or a therapist."],["Real help, not a brush-off","Names the right specialist briefly, then keeps helping."]],
+    h_prompt: "The system prompt",
+    p_prompt: "Paste into a bot's system prompt, a Custom GPT, a Claude Project, or ChatGPT Custom instructions (short version). Replace the crisis lines with verified ones for your audience.",
+    t_full: "Full (bots, GPTs, Projects)", t_short: "Short (Custom instructions)",
+    copy: "Copy", copied: "Copied", chars: n => n + " characters",
+    h_tests: "Test scenarios",
+    p_tests: "Invented messages to check a bot. Paste each into a fresh chat and compare the reply with the lists. A failure on a safety scenario should block release.",
+    must: "Must", must_not: "Must not", rule: "rule",
+    h_crisis: "Crisis lines",
+    crisisNote: c => "Checked " + c.checked + ". Numbers change: re-check on the operator's site before shipping. Not listed? Use 112 or the local emergency number and findahelpline.com.",
+    th: ["Country","Line","Number","Hours"],
+    footer: "Made by <a href=\"https://pairclear.com/en/" + UTM + "\">PairClear</a>, short quizzes about what is happening between two people. Code MIT, texts CC BY 4.0, written with AI assistance. <a href=\"https://github.com/pairclear/not-a-therapist\">Source on GitHub</a>. This page makes no network requests and has no analytics."
+  },
+  ru: {
+    h1: "Я не психотерапевт",
+    lead: "Правила для любого ИИ-чата, где люди говорят об отношениях и чувствах: сначала выслушать, никаких диагнозов, никаких ярлыков для тех, кого нет в разговоре, никаких «уходи от него», а признаки кризиса проверять раньше всего. Системный промпт, навык для Claude и 14 тестовых диалогов.",
+    banner: "Эти правила делают бота безопаснее. Они не превращают его в терапию и не заменяют специалиста или экстренные службы.",
+    rules: [["Сначала безопасность","Суицид, самоповреждение, насилие дома или опасность для ребёнка: оставить тему, спросить, в безопасности ли человек, дать настоящие номера."],["Сначала выслушать","Отразить услышанное и спросить, чего человек хочет: выговориться, понять, решить или подготовить разговор."],["Без диагнозов","Ни человеку, ни кому-то ещё. Ролевая игра этого не меняет."],["Без ярлыков","Никаких вердиктов «он нарцисс» об отсутствующих. Поступки, их влияние, варианты. Насилие называется прямо."],["Не решать за человека","Варианты и их цена; решение за ним."],["Без манипуляций","Никаких сообщений для ревности, проверок партнёра и слежки."],["Честный ИИ","Говорит, что он ИИ, может ошибаться, не друг и не терапевт."],["Помощь, а не отписка","Коротко называет нужного специалиста и продолжает помогать."]],
+    h_prompt: "Системный промпт",
+    p_prompt: "Вставьте в системный промпт бота, Custom GPT, проект Claude или пользовательские инструкции ChatGPT (короткая версия). Замените кризисные линии на проверенные для своей аудитории.",
+    t_full: "Полный (боты, GPT, проекты)", t_short: "Короткий (инструкции ChatGPT)",
+    copy: "Скопировать", copied: "Скопировано", chars: n => n + " символов",
+    h_tests: "Тестовые сценарии",
+    p_tests: "Выдуманные сообщения для проверки бота. Вставьте каждое в новый чат и сверьте ответ со списками. Провал на сценарии безопасности должен останавливать релиз.",
+    must: "Должен", must_not: "Не должен", rule: "правило",
+    h_crisis: "Кризисные линии",
+    crisisNote: c => "Проверено " + c.checked + ". Номера меняются: перед запуском перепроверьте на сайте службы. Вашей страны нет? Используйте 112 или местный экстренный номер и findahelpline.com.",
+    th: ["Страна","Линия","Номер","Часы"],
+    footer: "Сделано <a href=\"https://pairclear.com/ru/" + UTM + "\">PairClear</a>: короткие тесты о том, что происходит между двумя людьми. Код MIT, тексты CC BY 4.0, написано с помощью ИИ. <a href=\"https://github.com/pairclear/not-a-therapist\">Исходники на GitHub</a>. Страница не делает сетевых запросов и не собирает аналитику."
+  }
+};
+let lang = new URLSearchParams(location.search).get("lang") || ((navigator.language || "en").toLowerCase().startsWith("ru") ? "ru" : "en");
+if (!T[lang]) lang = "en";
+let version = "full";
+const $ = s => document.querySelector(s);
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]))}
+function render(){
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el => { const v = t[el.dataset.t]; if (typeof v === "string") el.innerHTML = v; });
+  document.querySelectorAll(".langs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === version));
+  $("#rules").innerHTML = t.rules.map(r => "<li><b>" + esc(r[0]) + "</b><span>" + esc(r[1]) + "</span></li>").join("");
+  const p = DATA.prompts[lang][version];
+  $("#prompt").textContent = p;
+  $("#count").textContent = t.chars(p.length);
+  $("#tests").innerHTML = DATA.scenarios.map((s,i) =>
+    "<details><summary>" + (i+1) + ". " + esc(s.user[lang].slice(0,70)) + (s.user[lang].length>70?"…":"") + " <small>(" + t.rule + " " + s.rule + ")</small></summary>" +
+    "<q>" + esc(s.user[lang]) + "</q><div class=\"cols\"><div><b class=\"ok\">" + t.must + "</b><ul>" + s.must[lang].map(x=>"<li>"+esc(x)+"</li>").join("") + "</ul></div>" +
+    "<div><b class=\"no\">" + t.must_not + "</b><ul>" + s.must_not[lang].map(x=>"<li>"+esc(x)+"</li>").join("") + "</ul></div></div></details>").join("");
+  const c = DATA.crisis;
+  $("#crisisNote").textContent = t.crisisNote(c);
+  let rows = "<tr>" + t.th.map(h=>"<th>"+h+"</th>").join("") + "</tr>";
+  c.global.forEach(g => rows += "<tr><td>—</td><td>" + (g.url ? "<a href=\""+g.url+"\" rel=\"noopener\">"+esc(g.name)+"</a>" : esc(g.name)) + "</td><td>" + esc(g.phone||"") + "</td><td>" + esc(g.hours) + "</td></tr>");
+  c.countries.forEach(k => k.lines.forEach(l => rows += "<tr><td>" + k.country + "</td><td>" + (l.url ? "<a href=\""+l.url+"\" rel=\"noopener\">"+esc(l.name)+"</a>" : esc(l.name)) + "</td><td><b>" + esc(l.phone) + "</b>" + (l.short?" ("+esc(l.short)+")":"") + (l.sms?"<br><span class=\"small muted\">SMS: "+esc(l.sms)+"</span>":"") + "</td><td>" + esc(l.hours) + "</td></tr>"));
+  $("#crisis").innerHTML = rows;
+}
+document.querySelectorAll(".langs button").forEach(b => b.onclick = () => { lang = b.dataset.lang; render(); });
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => { version = b.dataset.v; render(); });
+$("#copy").onclick = async () => {
+  const txt = DATA.prompts[lang][version];
+  try { await navigator.clipboard.writeText(txt); }
+  catch (e) { const r = document.createRange(); r.selectNodeContents($("#prompt")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand("copy"); }
+  $("#copy").textContent = T[lang].copied; setTimeout(() => $("#copy").textContent = T[lang].copy, 1600);
+};
+render();
+</script>
+</body>
+</html>
